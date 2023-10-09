@@ -1,0 +1,45 @@
+grep - Text processing tool and full form is "Global Regular expression" which prints any lines/output that matches the pattern
+
+-c: Count the number of lines that match a pattern.
+-h: Display the matched lines, but do not display the filenames.
+-i: Ignore case for matching.
+-l: Displays list of a filenames only.
+-n: Display the matched lines with line numbers.
+-v: Prints all the lines that do not match the pattern.
+-e exp: Specifies expression with this option. Can use multiple times.
+-f file: Takes patterns from a file.
+-E: Treats pattern as an extended regular expression (ERE).
+-w: Match whole word.
+-o : Print only the matched parts of a matching line.
+
+Sample File
+
+labex:~/ $ cat grepEx.txt 
+GREP is a multi-purpose file search tool that uses Regular Expressions.
+The grep command is used for searching the text from the file according to the regular expression.
+grep is a powerful file pattern searcher in Linux.     
+
+1. Case sensitive search. Find all occurences of "grep" and display those lines
+
+cat grepEx.txt | grep "grep"
+
+2. Case insensitive search. Find all occurences of "grep" and display those lines
+
+cat grepEx.txt | grep -i "grep"
+
+3. Count number of line which contains word "is". 
+
+cat grepEx.txt | grep -c "is"
+
+4. Display matched line with line number. 
+
+cat grepEx.txt | grep -n "GREP"
+
+5. Display all the lines that do not match pattern 
+
+cat grepEx.txt | grep -v "GREP"
+
+PRODUCTION SCENARIO Example ->
+
+Want to search errors or some specific pattern in log file, please use grep command. 
+

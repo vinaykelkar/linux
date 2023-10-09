@@ -1,0 +1,25 @@
+Sed - Stream editor for finding, searching and replacing words/characters. Basically it performs text transformations. 
+
+-n  : suppress automatic printing of pattern space
+-e  : add the script to the commands to be executed
+-f  : add the contents of script-file to the commands to be executed
+-i  : Changes in orignal file
+-r  : use extended regular expressions in the script
+
+labex:~/ $ cat employees.txt                                           
+azmat trainee devops 12000
+shubham trainee devops 25000
+yatharth manager devops 50000
+shubhrank manager account 47000
+
+1. Replace azmat with vinay
+
+cat employees.txt | sed 's/azmat/vinay/'
+
+2. Replace manager on line number 3 with director
+
+cat employees.txt | sed '3 s/manager/director/'
+
+3. Replace all manager with director
+
+cat employees.txt | sed  's/manager/director/g'

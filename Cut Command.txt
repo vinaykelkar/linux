@@ -1,0 +1,30 @@
+cut - Cut command is used to cut the data line by line using byte position, character and delimiter. 
+
+-b, --bytes=LIST        # select only these bytes
+-c, --characters=LIST   # select only these characters
+-d, --delimiter=DELIM   # use DELIM instead of TAB for field delimiter
+-f, --fields=LIST       # select only these fields;  also print any line that contains no delimiter character, unless the -s option is specified
+--complement            # complement the set of selected bytes, characters or fields
+-s, --only-delimited    # do not print lines not containing delimiters
+--output-delimiter=STRING  # use STRING as the output delimiter
+
+
+labex:~/ $ cat employees.txt 
+azmat trainee devops 12000
+shubham trainee devops 25000
+yatharth manager devops 50000
+shubhrank manager account 47000
+
+1. Display only second column
+
+cat employees.txt | cut -d " " -f 2
+
+2. Display 1st 3 chracter of 3rd column
+
+cat employees.txt | cut -d " " -f 3 | cut -c 1-3
+
+3. Replace space delimiter with comma
+
+cat employees.txt | cut -d " " -f 1-n --output-delimiter=','
+
+
