@@ -1,0 +1,201 @@
+bash and sh are two different shells of the Unix operating system
+
+Shebang - 
+
+#!bin/sh - Bourne shell
+#!bin/bash Bourne Again Shell
+
+bash is nothing but improvement on top of sh with better syntax.
+
+Linux interview beginner
+
+labex:~/ $ # 1. Use of Echo command
+labex:~/ $ echo "Hello World"
+Hello World
+
+labex:~/ $ # 2. Check hostname in Linux
+labex:~/ $ hostname
+6524356a960265079824251b
+
+labex:~/ $ # 3. Check current user in Linux
+labex:~/ $ whoami
+labex
+
+labex:~/ $ # 4. Check your current directory/path
+labex:~/ $ pwd
+/home/labex
+
+labex:~/ $ # 5. Difference between relative and absolute path
+labex:~/ $ # Relative Path - Start from current directory
+labex:~/ $ # Absolute Path - Full directory path
+
+labex:~/ $ # 6. Command to create file
+labex:~/ $ # vi,touch,vim,nano,cat
+labex:~/ $ 
+
+labex:~/ $ # 7. How to edit existing file 
+labex:~/ $ # vi,vim,nano
+labex:~/ $ 
+
+labex:~/ $ # 8. Rename file in linux
+labex:~/ $ mv employees.txt employee.txt
+
+labex:~/ $ # 9. Search specific work in file
+labex:~/ $ cat employee.txt| grep "azmat"
+azmat trainee devops 12000
+
+labex:~/ $ # 10. Diff between grep and egrep
+labex:~/ $ # in egrep you can search for more than one string at one time
+labex:~/ $ # egrep "word1|word2" employeyee.txt
+labex:~/ $ cat employee.txt| egrep "azmat|shubham"
+azmat trainee devops 12000
+shubham trainee devops 25000
+
+labex:~/ $ # 11. How can you read file without cat command?
+labex:~/ $ # less command, vi command, nano command, more command
+labex:~/ $ 
+labex:~/ $ # 12. Advantage of less command
+labex:~/ $ # allows forward and backward searching (forward / backward ?)
+labex:~/ $ # navigation from top to bottom is easy using capital G
+labex:~/ $ 
+labex:~/ $ # 13. Check file's permission
+labex:~/ $ ls -l employee.txt           
+-rw-rw-r-- 1 labex labex 118 Oct 10 01:17 employee.txt
+labex:~/ $ ll employee.txt 
+-rw-rw-r-- 1 labex labex 118 Oct 10 01:17 employee.txt
+labex:~/ $ getfacl employee.txt 
+# file: employee.txt
+# owner: labex
+# group: labex
+user::rw-
+group::rw-
+other::r--
+labex:~/ $ 
+labex:~/ $ # 14. Check IP address
+labex:~/ $ ip addr 
+labex:~/ $ ifconfig
+labex:~/ $ 
+labex:~/ $ # 15. Read top 5 lines
+labex:~/ $ cat employee.txt| head -5
+labex:~/ $ 
+labex:~/ $ # 16. read last 5 lines
+labex:~/ $ cat employee.txt| tail -5
+labex:~/ $ 
+labex:~/ $ # 17. list hidden files
+labex:~/ $ ls -la
+labex:~/ $ 
+labex:~/ $ # 18. list recently used commands
+labex:~/ $ history
+labex:~/ $ 
+labex:~/ $ # 19. What is root?
+labex:~/ $ # admin or super user   
+labex:~/ $ 
+labex:~/ $ # 20. What is inode and how to find it for a file
+labex:~/ $ ls -li
+labex:~/ $ # (index node ) unique identifier for a specific piece of metadata on a given filesystem
+labex:~/ $
+labex:~/ $ # 21. Command to find files          
+labex:~/ $ find . -name "<filename>"
+labex:~/ $
+labex:~/ $ # 22. count words and lines
+labex:~/ $ wc -l
+labex:~/ $
+labex:~/ $ # 23. Usage of pipe
+labex:~/ $ # combine two commands together and redirect output of one command to input for other command
+labex:~/ $
+labex:~/ $ # 24. view difference between two files
+labex:~/ $ diff file1 file2
+labex:~/ $
+labex:~/ $ # 25. use of shred command
+labex:~/ $ # permanently delete a file which you can never recover
+labex:~/ $ shred -u filename
+labex:~/ $ shred --remove filename
+labex:~/ $
+labex:~/ $ # 26. check system architecture info
+labex:~/ $ lscpu
+labex:~/ $
+labex:~/ $ # 27. combine two files
+labex:~/ $ cat file1 file2 > resultant
+labex:~/ $ cat file1 file2 
+labex:~/ $ 
+labex:~/ $ # 28. find type of file
+labex:~/ $ file filname
+labex:~/ $ 
+labex:~/ $ # 29. Sort content of the file
+labex:~/ $ cat filename | sort -nr
+labex:~/ $
+labex:~/ $ # 30. how do you access linux server from windows machine
+labex:~/ $ # putty, windows terminal, cmd, git bash
+labex:~/ $
+labex:~/ $ # 31. Different type of permission for a file
+labex:~/ $ # read write and execute
+labex:~/ $ 
+labex:~/ $ # 32. which permission allows user to run script
+labex:~/ $ # execute
+labex:~/ $      
+labex:~/ $ # 33. write output of command in file
+labex:~/ $ # command > filename
+labex:~/ $ 
+labex:~/ $ # 34. write something in file without deleting existing content
+labex:~/ $ # use apend >>
+labex:~/ $ 
+labex:~/ $ # 35. redirect error of command into a file
+labex:~/ $ # use 2>
+labex:~/ $ # redirect both error and output 2>&1
+labex:~/ $ 
+labex:~/ $ # 36. Automate any task / script
+labex:~/ $ # using cronjobs
+labex:~/ $
+labex:~/ $ # 37. check schedule jobs
+labex:~/ $ crontab -l
+labex:~/ $
+labex:~/ $ # 38. meaning of crontab * * * * *
+labex:~/ $ # minute, hour, day of the month, month, day of week
+labex:~/ $
+labex:~/ $ # 39. how to check if cron job did not work
+labex:~/ $ # check system time. Possible that your local timezone may not match with system timezone and job has not run yet. 
+labex:~/ $ # check if present in crontab
+labex:~/ $ # check /var/log/messages
+labex:~/ $
+labex:~/ $ # 40. what is daemon service?
+labex:~/ $ # service that is running background, httpd, sshd, like this
+labex:~/ $
+labex:~/ $ # 41. how to check if service is running or not
+labex:~/ $ systemctl status httpd
+labex:~/ $
+labex:~/ $ # 42. how to start / stop service
+labex:~/ $ systemctl start service_name
+labex:~/ $ systemctl stop service_name
+labex:~/ $ 
+labex:~/ $ # 43. how to check free disk space
+labex:~/ $ df -h 
+labex:~/ $
+labex:~/ $ # 44. check size of directory
+labex:~/ $ du -sh directory/
+labex:~/ $ # summarize and h for human readable format
+labex:~/ $
+labex:~/ $ # 45. check cpu usage of process
+labex:~/ $ top
+labex:~/ $
+labex:~/ $ # 46. what is process
+labex:~/ $ # instance of running program. Process is created when you run app/program. PID is uniquely assied to that process.
+labex:~/ $
+labex:~/ $ # 47. check if app/process is running or not
+labex:~/ $ ps -ef | grep "processname"
+labex:~/ $ 
+labex:~/ $ # 48. stop/terminate process
+labex:~/ $ kill -15 pid #graceful termination
+labex:~/ $ kill -9 pid  #forceful termination
+labex:~/ $ 
+labex:~/ $ # 49. how to check if IP/Server is accessible or not
+labex:~/ $ # ping or telnet command
+labex:~/ $ 
+labex:~/ $ # 50. Command to check info about ports
+labex:~/ $ netstat
+labex:~/ $ 
+labex:~/ $ # 51. how to check if port is open
+labex:~/ $ netstat -putan | grep :portno
+labex:~/ $ lsof -i :portno
+
+
+
