@@ -196,6 +196,93 @@ labex:~/ $
 labex:~/ $ # 51. how to check if port is open
 labex:~/ $ netstat -putan | grep :portno
 labex:~/ $ lsof -i :portno
+labex:~/ $ 
+labex:~/ $ # 52. how to check free memory on linux server
+labex:~/ $ free -m
+labex:~/ $ 
+labex:~/ $ # 53. how to get unique values from file
+labex:~/ $ cat filename | sort -nr | uniq
+labex:~/ $ 
+labex:~/ $ # 54. how to split file 
+labex:~/ $ split -l 100 filename
+labex:~/ $
+labex:~/ $ # 55. how to send 3 packets to google.com
+labex:~/ $ ping -c 3 google.com
+labex:~/ $
+labex:~/ $ # 56. what is alias and how do you setup
+labex:~/ $ alias d="ls -ltr | awk '{print \$9}'"
+labex:~/ $ # backslash is needed to escape quotes. 
+labex:~/ $
+labex:~/ $ # 57. how to check if package is installed or not
+labex:~/ $ rpm -qa | grep packagename
+labex:~/ $
+labex:~/ $ # 58. which file contains group details
+labex:~/ $ cat /etc/group
+labex:~/ $
+labex:~/ $ # 59. Let say you execute command and now need to check exit status of that previously executed command
+labex:~/ $ $?
+labex:~/ $
+labex:~/ $ # 60. Command following ; will be executed or not
+labex:~/ $ # yes irrespective of exit status of previous command
+labex:~/ $
+labex:~/ $ # 61. exit status codes in linux
+labex:~/ $ 0 - 255
+labex:~/ $
+labex:~/ $ # 62. find vs locate
+labex:~/ $ # locate mainatains it is own database and root user needs to update it from time to time. Find searches file in filesystem.
+labex:~/ $
+labex:~/ $ # 63. TEE command
+labex:~/ $ ls | tee test.txt
+labex:~/ $ # write output of command to file as well print output on the console
+labex:~/ $
+labex:~/ $ # 64. usage of Xargs
+labex:~/ $ # to use as command line arguments
+labex:~/ $
+labex:~/ $ # 65. find number of file and folder in directories
+labex:~/ $ ls -l | grep '^d' | wc -l
+4
+labex:~/ $ ls -l | grep '^-' | wc -l
+1
+labex:~/ $ ls -l | wc -l 
+5
+labex:~/ $
+labex:~/ $ # 66. read 26th to 30th line in file
+labex:~/ $ head -30 filename | tail -5
+labex:~/ $
+labex:~/ $ # 67. use of tar command
+labex:~/ $ # by default combines multiple files / directories together in one file
+labex:~/ $
+labex:~/ $ # 68. how do you troubleshoot DNS issues
+labex:~/ $ # ping, nslookup
+labex:~/ $
+labex:~/ $ # 69. use of At command
+labex:~/ $ # schedule task only at once and it is ont repetitive. It uses Atd daemon service
+labex:~/ $
+labex:~/ $ # 70. hard vs soft links
+labex:~/ $ # soft link - link will be removed if original file is removed/deleted
+labex:~/ $ # hard link - link stays even if original file is renamed/deleted/removed
+labex:~/ $
+labex:~/ $ # 71. what is nice value of process?
+labex:~/ $ # scale is there -20 to 19. Lower the number higher priority the task gets. It can be checked using ps and top command
+labex:~/ $
+labex:~/ $ # 72. you want particular PID to complete faster than usual. 
+labex:~/ $ # use nice value. Lower the number higher is the priority
+labex:~/ $ renice -20 -p pid
+labex:~/ $
+labex:~/ $ # 73. how to resume a stopped job
+labex:~/ $ # using bg or fg command
+labex:~/ $
+labex:~/ $ # 74 create files naming as file1, file2, file3,...file1000
+labex:~/ $ touch file{1..1000}
+labex:~/ $
+labex:~/ $ # 75. check currently configured physical volume
+labex:~/ $ lvs # it needs root/sudo access
+labex:~/ $
+
+
+
+
+
 
 
 
